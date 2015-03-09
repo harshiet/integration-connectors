@@ -7,6 +7,7 @@ import java.util.List;
 import com.aurotech.integration.connector.ConnectionParams;
 import com.aurotech.integration.connector.RestConnectionParams;
 import com.aurotech.integration.connector.RestConnector;
+import com.aurotech.integration.connector.CommonUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class JiraServiceImpl implements JiraService {
@@ -51,7 +52,7 @@ public class JiraServiceImpl implements JiraService {
 	}
 
 	public List<JsonNode> findUpdatedIssues(Date startDate, Date endDate) throws Exception {
-		String jql = "updated>=\"" + Utils.toJiraDate(startDate) + "\" and updated<\"" + Utils.toJiraDate(endDate)
+		String jql = "updated>=\"" + CommonUtils.toJiraDate(startDate) + "\" and updated<\"" + CommonUtils.toJiraDate(endDate)
 				+ "\"";
 		List<JsonNode> issues = search.find(connectionParams, new ArrayList<String>(), jql);
 		return issues;

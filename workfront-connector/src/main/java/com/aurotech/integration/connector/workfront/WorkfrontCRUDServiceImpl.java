@@ -26,7 +26,8 @@ public class WorkfrontCRUDServiceImpl implements WorkfrontCRUDService {
 		params.put("username", connectionParams.getUsername());
 		params.put("password", connectionParams.getPassword());
 		String result = rest.post(connectionParams, Metadata.LOGIN_URI, Utils.mapToQueryString(params));
-		logger.debug(result);
+		
+	
 	}
 	// protected final JsonNode searchObjects(String sessionId, ObjectCodes
 	// objectCode, Map<String, Object> filter)

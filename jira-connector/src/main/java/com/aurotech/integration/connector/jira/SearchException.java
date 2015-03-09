@@ -1,5 +1,6 @@
 package com.aurotech.integration.connector.jira;
 
+import com.aurotech.integration.connector.CommonUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @SuppressWarnings("serial")
@@ -11,7 +12,7 @@ public class SearchException extends Exception {
 		super(message);
 		try {
 			response = message;
-			errors = Utils.stringToJsonNode(message);
+			errors = CommonUtils.stringToJsonNode(message);
 		} catch (Exception e) {
 			throw e;
 		}

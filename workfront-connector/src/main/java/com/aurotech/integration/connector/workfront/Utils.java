@@ -7,19 +7,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class Utils {
-	@SuppressWarnings("rawtypes")
-	public static boolean isEmpty(Object o) {
-		if (o == null) {
-			return true;
-		}
-		if (o instanceof List) {
-			return ((List) o).size() == 0;
-		}
-		if (o.equals("null")) {
-			return true;
-		}
-		return false;
-	}
 
 	@SuppressWarnings("rawtypes")
 	public static String mapToQueryString(Map<String, String> params) throws UnsupportedEncodingException {

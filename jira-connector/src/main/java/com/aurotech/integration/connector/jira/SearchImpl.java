@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 
 import com.aurotech.integration.connector.ConnectionParams;
 import com.aurotech.integration.connector.RestConnector;
+import com.aurotech.integration.connector.CommonUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -31,7 +32,7 @@ public class SearchImpl implements Search {
 	public int size(ConnectionParams conn, List<String> fields, String filter) throws Exception {
 		String searchJson = buildSearchJson(fields, filter, 0, PAGESIZE_Sizing);
 		String response = restConnector.post(conn, Metadata.ISSUE_SEARCH_URI, searchJson);
-		JsonNode json = Utils.stringToJsonNode(response);
+		JsonNode json = CommonUtils.stringToJsonNode(response);
 		int size = json.get("total").asInt();
 		return size;
 	}
@@ -43,10 +44,10 @@ public class SearchImpl implements Search {
 		do {
 			String searchJson = buildSearchJson(fields, filter, fetched, PAGESIZE);
 			String response = restConnector.post(conn, Metadata.ISSUE_SEARCH_URI, searchJson);
-			JsonNode json = Utils.stringToJsonNode(response);
+			JsonNode json = CommonUtils.stringToJsonNode(response);
 			JsonNode issuesFetched = json.get("issues");
 			fetched += issuesFetched.size();
-			Utils.addAll(results, issuesFetched.elements());
+			CommonUtils.addAll(results, issuesFetched.elements());
 			total = json.get("total").asInt();
 		} while (fetched < total);
 		return results;
@@ -63,7 +64,7 @@ public class SearchImpl implements Search {
 			map.put("jql", filter);
 		}
 		map.put("fields", fields);
-		String searchJson = Utils.objectToJsonString(map);
+		String searchJson = CommonUtils.objectToJsonString(map);
 		logger.debug("Search JSON:" + searchJson);
 		return searchJson;
 	}
