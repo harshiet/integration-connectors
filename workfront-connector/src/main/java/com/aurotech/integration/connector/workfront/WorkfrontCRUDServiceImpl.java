@@ -6,8 +6,10 @@ import java.util.Map;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import com.aurotech.integration.connector.CommonUtils;
 import com.aurotech.integration.connector.ConnectionParams;
 import com.aurotech.integration.connector.RestConnector;
+import com.fasterxml.jackson.databind.JsonNode;
 
 public class WorkfrontCRUDServiceImpl implements WorkfrontCRUDService {
 	private static final int MAX_RESULT_COUNT = 2000;
@@ -26,8 +28,10 @@ public class WorkfrontCRUDServiceImpl implements WorkfrontCRUDService {
 		params.put("username", connectionParams.getUsername());
 		params.put("password", connectionParams.getPassword());
 		String result = rest.post(connectionParams, Metadata.LOGIN_URI, Utils.mapToQueryString(params));
-		
-	
+		JsonNode json = CommonUtils.stringToJsonNode(result);
+		String sessionId = json.get("data").get("sessionID").asText();
+		logger.debug(sessionId);
+
 	}
 	// protected final JsonNode searchObjects(String sessionId, ObjectCodes
 	// objectCode, Map<String, Object> filter)
