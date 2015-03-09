@@ -7,9 +7,7 @@
     <artifactId>integration-connectors</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.aurotech.integration</groupId>
   <artifactId>jira-connector</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>jira-connector</name>
   <url>http://maven.apache.org</url>
   <properties>
