@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.aurotech.integration.connector.ConnectionParams;
 import com.aurotech.integration.connector.RestConnectionParams;
+import com.fasterxml.jackson.databind.JsonNode;
 
 @Component
 public class WorkfrontServiceImpl implements WorkfrontService {
@@ -21,7 +22,7 @@ public class WorkfrontServiceImpl implements WorkfrontService {
 
 	}
 
-	public void createOrUpdateTask(String task) {
+	public void createOrUpdateTask(JsonNode task) {
 		logger.debug(task);
 	}
 

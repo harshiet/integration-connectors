@@ -1,22 +1,26 @@
 package com.aurotech.integration.connector.workfront;
 
-import java.util.Date;
-import java.util.List;
+import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import com.aurotech.integration.connector.CommonUtils;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 @RestController
 @RequestMapping("/connector/workfront")
 public class WorkfrontConnectorController {
+	@Autowired
 	WorkfrontService ws;
 
-	@RequestMapping("/createOrUpdateTask")
-	public void createOrUpdateTask(@RequestParam(required = true) String task)  {
-		ws.createOrUpdateTask(task);
+	@RequestMapping(value = "/createOrUpdateTask", method = RequestMethod.POST)
+	public void createOrUpdateTask(@RequestParam(required = true) String task) throws JsonProcessingException,
+			IOException {
+		ws.createOrUpdateTask(CommonUtils.stringToJsonNode(task));
 	}
 
 }
