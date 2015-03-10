@@ -1,11 +1,17 @@
 package com.aurotech.integration.connector.workfront;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
+
 import com.aurotech.integration.connector.ConnectionParams;
 import com.aurotech.integration.connector.RestConnectionParams;
 import com.fasterxml.jackson.databind.JsonNode;
 
+@Component
 public class WorkfrontServiceImpl implements WorkfrontService {
 	WorkfrontCRUDService workfrontCRUDService;
+	private static final Logger logger = LogManager.getLogger(WorkfrontServiceImpl.class.getName());
 
 	public WorkfrontServiceImpl() throws Exception {
 		ConnectionParams connectionParams = new RestConnectionParams();
@@ -17,7 +23,7 @@ public class WorkfrontServiceImpl implements WorkfrontService {
 	}
 
 	public void createOrUpdateTask(JsonNode task) {
-		
+		logger.debug(task);
 	}
 
 }

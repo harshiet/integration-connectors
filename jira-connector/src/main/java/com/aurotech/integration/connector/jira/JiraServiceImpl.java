@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.aurotech.integration.connector.ConnectionParams;
 import com.aurotech.integration.connector.RestConnectionParams;
 import com.aurotech.integration.connector.RestConnector;
 import com.aurotech.integration.connector.CommonUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 
+@Service
 public class JiraServiceImpl implements JiraService {
 
 	// private static final Logger logger =
