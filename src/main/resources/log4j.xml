@@ -7,7 +7,7 @@
 		</layout>
 	</appender>
 	<appender name="appLog" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="File" value="/var/log/applogs/integration-connectors.log" />
+		<param name="File" value="/Users/harsh/applogs/integration-connectors.log" />
 		<param name="Append" value="true" />
 		<param name="DatePattern" value="'.'yyyy-MM-dd" />
 		<layout class="org.apache.log4j.PatternLayout">
