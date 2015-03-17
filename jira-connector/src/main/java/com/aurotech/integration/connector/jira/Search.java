@@ -2,7 +2,7 @@ package com.aurotech.integration.connector.jira;
 
 import java.util.List;
 
-import com.aurotech.integration.connector.ConnectionParams;
+import com.aurotech.integration.params.ConnectionParams;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public interface Search {

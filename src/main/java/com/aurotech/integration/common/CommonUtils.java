@@ -1,4 +1,4 @@
-package com.aurotech.integration.connector;
+package com.aurotech.integration.common;
 
 import java.io.IOException;
 import java.math.BigInteger;

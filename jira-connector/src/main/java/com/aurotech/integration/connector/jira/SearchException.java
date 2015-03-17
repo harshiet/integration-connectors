@@ -1,6 +1,6 @@
 package com.aurotech.integration.connector.jira;
 
-import com.aurotech.integration.connector.CommonUtils;
+import com.aurotech.integration.common.CommonUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @SuppressWarnings("serial")

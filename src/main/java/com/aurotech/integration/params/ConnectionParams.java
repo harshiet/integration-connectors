@@ -1,4 +1,4 @@
-package com.aurotech.integration.connector;
+package com.aurotech.integration.params;
 
 public interface ConnectionParams {
 

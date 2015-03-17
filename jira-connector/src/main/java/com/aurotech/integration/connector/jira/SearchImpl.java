@@ -11,9 +11,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import com.aurotech.integration.connector.ConnectionParams;
+import com.aurotech.integration.common.CommonUtils;
 import com.aurotech.integration.connector.RestConnector;
-import com.aurotech.integration.connector.CommonUtils;
+import com.aurotech.integration.params.ConnectionParams;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 

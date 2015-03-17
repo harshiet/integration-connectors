@@ -6,9 +6,9 @@ import java.util.Map;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import com.aurotech.integration.connector.CommonUtils;
-import com.aurotech.integration.connector.ConnectionParams;
+import com.aurotech.integration.common.CommonUtils;
 import com.aurotech.integration.connector.RestConnector;
+import com.aurotech.integration.params.ConnectionParams;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class WorkfrontCRUDServiceImpl implements WorkfrontCRUDService {

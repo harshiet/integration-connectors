@@ -4,8 +4,8 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
-import com.aurotech.integration.connector.ConnectionParams;
-import com.aurotech.integration.connector.RestConnectionParams;
+import com.aurotech.integration.params.ConnectionParams;
+import com.aurotech.integration.params.RestConnectionParams;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @Component
@@ -23,7 +23,7 @@ public class WorkfrontServiceImpl implements WorkfrontService {
 	}
 
 	public void createOrUpdateTask(JsonNode task) {
-		logger.debug(task);
+		
 	}
 
 }

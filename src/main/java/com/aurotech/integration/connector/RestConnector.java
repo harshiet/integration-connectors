@@ -23,6 +23,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
+import com.aurotech.integration.params.ConnectionParams;
+
 public final class RestConnector implements Connector {
 	private final int connectTimeoutMillis = 30000;
 	private static RestConnector instance = null;

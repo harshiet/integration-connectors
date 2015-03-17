@@ -6,10 +6,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.aurotech.integration.connector.ConnectionParams;
-import com.aurotech.integration.connector.RestConnectionParams;
+import com.aurotech.integration.common.CommonUtils;
 import com.aurotech.integration.connector.RestConnector;
-import com.aurotech.integration.connector.CommonUtils;
+import com.aurotech.integration.params.ConnectionParams;
+import com.aurotech.integration.params.RestConnectionParams;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @Service
