@@ -1,6 +1,5 @@
 package com.aurotech.integration.connector.jira;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,8 @@ public class JiraConnectorController {
 	JiraService js;
 
 	@RequestMapping("/updatedIssues")
-	public List<JsonNode> updatedIssues(@RequestParam(required = true) Date startDate,
-			@RequestParam(required = true) Date endDate) throws Exception {
-		return js.findUpdatedIssues(startDate, endDate);
+	public List<JsonNode> updatedIssues(
+			@RequestParam(required = true) String customer) throws Exception {
+		return js.findUpdatedIssues(customer);
 	}
 }
