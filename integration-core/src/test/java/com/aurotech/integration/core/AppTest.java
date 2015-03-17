@@ -1,4 +1,4 @@
-package com.aurotech.integration.connectors;
+package com.aurotech.integration.core;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
