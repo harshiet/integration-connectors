@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +19,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 @Service
 public class JiraServiceImpl implements JiraService {
 
-	// private static final Logger logger =
-	// LogManager.getLogger(JiraServiceImpl.class.getName());
+	private static final Logger logger = LogManager
+			.getLogger(JiraServiceImpl.class.getName());
 	RestConnector rest;
 	ConnectionParams connectionParams;
 	Search search = new SearchImpl();
@@ -59,11 +61,13 @@ public class JiraServiceImpl implements JiraService {
 	}
 
 	public List<JsonNode> findUpdatedIssues(String customer) throws Exception {
-		
-		customerRepository.findAll();
-		String jql = "updated>=\"" + CommonUtils.toJiraDate(new Date()) + "\" and updated<\"" + CommonUtils.toJiraDate(new Date())
+
+		logger.debug(customerRepository.findAll());
+		String jql = "updated>=\"" + CommonUtils.toJiraDate(new Date())
+				+ "\" and updated<\"" + CommonUtils.toJiraDate(new Date())
 				+ "\"";
-		List<JsonNode> issues = search.find(connectionParams, new ArrayList<String>(), jql);
+		List<JsonNode> issues = search.find(connectionParams,
+				new ArrayList<String>(), jql);
 		return issues;
 	}
 
