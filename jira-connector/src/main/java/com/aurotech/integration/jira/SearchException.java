@@ -1,4 +1,4 @@
-package com.aurotech.integration.connector.jira;
+package com.aurotech.integration.jira;
 
 import com.aurotech.integration.common.CommonUtils;
 import com.fasterxml.jackson.databind.JsonNode;

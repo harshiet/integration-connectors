@@ -1,11 +1,9 @@
-package com.aurotech.integration.connector.jira;
+package com.aurotech.integration.jira;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.aurotech.integration.repository" })
 public class JiraConnectorApp {
 
 	public static void main(String[] args) throws Exception {

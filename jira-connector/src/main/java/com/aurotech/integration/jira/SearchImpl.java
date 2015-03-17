@@ -1,4 +1,4 @@
-package com.aurotech.integration.connector.jira;
+package com.aurotech.integration.jira;
 
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
