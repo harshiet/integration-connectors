@@ -2,6 +2,7 @@ package com.aurotech.integration.jira;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.log4j.LogManager;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.aurotech.integration.common.CommonUtils;
 import com.aurotech.integration.connector.RestConnector;
+import com.aurotech.integration.domain.Customer;
 import com.aurotech.integration.params.ConnectionParams;
 import com.aurotech.integration.params.RestConnectionParams;
 import com.aurotech.integration.repository.CustomerRepository;
@@ -62,7 +64,10 @@ public class JiraServiceImpl implements JiraService {
 
 	public List<JsonNode> findUpdatedIssues(String customer) throws Exception {
 
-		logger.debug(customerRepository.findAll());
+		Iterator<Customer> customers = customerRepository.findAll().iterator();
+		while (customers.hasNext()) {
+			logger.debug(customers.next().getKey());
+		}
 		String jql = "updated>=\"" + CommonUtils.toJiraDate(new Date())
 				+ "\" and updated<\"" + CommonUtils.toJiraDate(new Date())
 				+ "\"";
@@ -70,5 +75,4 @@ public class JiraServiceImpl implements JiraService {
 				new ArrayList<String>(), jql);
 		return issues;
 	}
-
 }
