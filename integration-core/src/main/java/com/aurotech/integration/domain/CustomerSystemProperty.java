@@ -1,12 +1,19 @@
 package com.aurotech.integration.domain;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-public class CustomerSystemProperties {
+@Entity
+public class CustomerSystemProperty {
 
 	@Id
 	private Long id;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "customer_system_id")
 	private CustomerSystem customerSystem;
 
 	private String name;
